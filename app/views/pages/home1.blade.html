@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="{{ $description }}">
+<title>{{ $title }}</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure.css">
+<link rel="stylesheet" href="../public/css/custom.css">
+<link rel="stylesheet" href="../public/css/jquery.dropdown.css">
+<link rel="stylesheet" href="../public/css/login.css">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="../public/js/jquery.dropdown.js"></script>
+<script src="../public/js/login.js"></script>
+
+
+
+</head>
+
+    <div class="header top-band">
+        <div class="pure-menu pure-menu-open pure-menu-horizontal member-login">      
+            <ul class="fl">
+                <li><a href="#">Stockfree</a></li>
+                <li><a href="#">English</a></li>
+            </ul>
+            <ul class="fr">
+                <li><a class="start-downloading" href="#">Start Downloading</a></li> <span>|</span>
+                <li>
+			        <!--  twitter login 
+					================================================ -->
+		   	        <!-- Login Starts Here -->
+		            <div id="loginContainer">
+		                <a href="#" id="loginButton"><span>Login</span><em></em></a>
+		                <div style="clear:both"></div>
+		                <div id="loginBox">                
+		                    <form id="loginForm">
+		                        <fieldset id="body">
+		                            <fieldset>
+		                                <label for="email">Email Address</label>
+		                                <input type="text" name="email" id="email" />
+		                            </fieldset>
+		                            <fieldset>
+		                                <label for="password">Password</label>
+		                                <input type="password" name="password" id="password" />
+		                            </fieldset>
+		                            <input type="submit" id="login" value="Sign in" />
+		                            <label for="checkbox"><input type="checkbox" id="checkbox" />Remember me</label>
+		                        </fieldset>
+		                        <span><a href="#">Forgot your password?</a></span>
+		                    </form>
+		                </div>
+		            </div>
+		            <!-- Login Ends Here -->
+		         </li>
+            </ul>
+            <div class="spacer"></div>
+        </div>
+    </div>
+
+
+
+
+<header class="header">
+	        <div class="pure-g">
+	            <h1 class="pure-u-6-24">Stockfree</h1>
+	            <div class="main-search-form pure-u-18-24">
+		           <form class="pure-form">
+		           
+		           <!--  Refine Search Dropdown 
+			           ================================================ -->
+						<!--
+							<div class="refine-search-dropdown">
+							<div id="dd" class="wrapper-dropdown-3" tabindex="1">
+							    <span>Refine Search</span>
+							    <ul class="dropdown advanced-search">
+							     form goes here.....
+							     <ul>
+							</div>Images
+							</div>
+-->
+							    
+		<!-- <span class="example" data-dropdown="#dropdown-2">Example</span> -->
+		<button class="pure-button example" data-dropdown="#dropdown-2">Refine Selection</button>
+					    
+		 <div id="dropdown-2" class="dropdown dropdown-tip">
+			<ul class="dropdown-menu">
+<!-- Category
+=============================== -->		
+		<li class="search_category">
+			<h4>Category</h4>
+			<div>
+				<select name="search_category">
+					<option value="">Any Category</option>
+						<option value="1">
+							Abstract
+						</option>
+						<option value="2">
+							Advertising
+						</option>
+						<option value="3">
+							Agriculture
+						</option>
+						<option value="4">
+							Animals Wildlife
+						</option>
+						<option value="5">
+							Arts & Entertainment
+						</option>
+						<option value="6">
+							Backgrounds & Textures
+						</option>
+						<option value="7">
+							Business & Finance
+						</option>
+						<option value="8">
+							Building & Architecture
+						</option>
+						<option value="9">
+							IT & Communication
+						</option>
+						<option value="10">
+							Illustrations & Clip Art
+						</option>
+						<option value="11">
+							Interiors
+						</option>
+						<option value="12">
+							Education
+						</option>
+						<option value="13">
+							Family
+						</option>
+						<option value="14">
+							Fashion & Beauty
+						</option>
+						<option value="15">
+							Fantasy
+						</option>
+						<option value="16">
+							Food & Drink
+						</option>
+						<option value="17">
+							Furniture
+						</option>
+						<option value="18">
+							Holidays & Celebrations
+						</option>
+						<option value="19">
+							Industry
+						</option>
+						<option value="20">
+							Logos Signs & Symbols
+						</option>
+						<option value="21">
+							Medical & Health
+						</option>
+						<option value="22">
+							Military
+						</option>
+						<option value="23">
+							Miscellaneous
+						</option>
+						<option value="24">
+							Music & Instraments
+						</option>
+						<option value="25">
+							Nature
+						</option>
+						<option value="26">
+							Objects & Shapes
+						</option>
+						<option value="27">
+							Parks & Outdoors
+						</option>
+						<option value="28">
+							Plants & Trees
+						</option>
+						<option value="29">
+							People
+						</option>
+						<option value="30">
+							Religion & Politics
+						</option>
+						<option value="31">
+							Science
+						</option>
+						<option value="32">
+							Sci-Fi
+						</option>
+						<option value="33">
+							Sports & Recreation
+						</option>
+						<option value="34">
+							Streets Cityscapes Locations 
+						</option>
+						<option value="35">
+							Technology
+						</option>
+						<option value="36">
+							Tools & Equipment
+						</option>
+						<option value="37">
+							Transportation
+						</option>
+						<option value="38">
+							Vectors
+						</option>
+						<option value="39">
+							Vintage
+						</option>
+						<option value="40">
+							3D Images
+						</option>
+				</select>
+			</div>
+		</li><!-- End Category  -->
+		
+
+<!-- Media Type
+=============================== -->
+		<li class="media_type">
+			<h4>Image Type</h4>
+			<div>
+				<label>
+					<input type="radio" name="media_type" value="images" checked="">
+					All Images
+				</label>
+				<label>
+					<input type="radio" name="media_type" value="photos">
+					Photos
+				</label>
+				<label>
+					<input type="radio" name="media_type" value="vectors">
+					Vectors
+				</label>
+				<label>
+					<input type="radio" name="media_type" value="illustrations">
+					Illustrations
+				</label>
+			</div>	
+		</li><!-- End Media Type  -->
+
+<!-- Orientation
+=============================== -->		
+		<li class="orientation">
+			<h4>Orientation</h4>
+			<div>
+				<label>
+					<input type="checkbox" name="horizontal">
+					Portrait
+				</label>
+				<label>
+					<input type="checkbox" name="vertical">
+					Landscape
+				</label>
+				<label>
+					<input type="checkbox" name="square">
+					Square
+				</label>
+			</div>
+		</li><!-- End Orientation  -->
+		
+		
+<!-- Exclude Keywords 
+=============================== -->		
+		<li class="exclude-keywords">
+			<h4>Exclude Keywords</h4>
+			<div>
+				<label>
+					<input type="text" name="exclude-keywords" value="" placeholder="Exclude Words">
+				</label>
+			</div>
+		</li><!-- End Exclude Keywords  -->
+		
+<!-- Contributor Name 
+=============================== -->		
+		<li class="contributor-name">
+			<h4>Contributor Name</h4>
+			<div>
+				<label>
+					<input type="text" name="contributor-name" value="" placeholder="Contributor Name">
+				</label>
+			</div>
+		</li><!-- End Contributor Name  -->
+		
+<!-- People 
+=============================== -->			
+		<li class="people">
+			<h4>People</h4>
+			<div>
+				<label>
+					<input type="checkbox" name="people">
+					Only Images with People
+				</label>
+				<label>
+					<input type="checkbox" name="no_people">
+					Exclude People
+				</label>
+				<label>
+				<div class="more_people">
+					<select name="people_gender">
+						<option value="">Any Gender</option>
+							<option value="male">
+								Male
+							</option>
+							<option value="female">
+								Female
+							</option>
+							<option value="both">
+								Both Genders
+							</option>
+					</select>
+				</div>
+				</label>
+				<label>
+				<div>	
+					<select name="people_number">
+						<option value="">Any Number of People</option>
+							<option value="1">
+								1 Person
+							</option>
+							<option value="2">
+								2 People
+							</option>
+							<option value="3">
+								3 People
+							</option>
+							<option value="4">
+								4+ People
+							</option>
+					</select>
+				</div>
+				</label>
+			</div>
+		</li><!-- End people  -->
+		
+<!-- Editorial 
+=============================== -->			 
+		<li class="editorial">
+			<h4>Editorial</h4>
+			<div>
+				<label>
+					<input type="checkbox" name="editorial">
+					Editorial
+				</label>
+				<label>
+					<input type="checkbox" name="non-editorial">
+					Non-Editorial
+				</label>
+			</div>
+		</li><!-- End editorial  -->
+		
+		
+<!-- Color 
+=============================== -->		
+		<li class="color">
+			<h4>Color</h4>
+			<div>
+				<select name="color">
+					<option value="">Select a color</option>
+						<option value="red">
+							Red
+						</option>
+						<option value="green">
+							Green
+						</option>
+						<option value="blue">
+							Blue
+					</option>
+				</select>
+			</div>
+		<li><!-- End editorial  -->
+		
+<!-- submit & Clear 
+=============================== -->			
+		<li class="sub-clear">
+			<input class="button-success pure-button" name="secondary_submit" type="submit" value="Search">
+			<input class="pure-button button_clear" type="button"  value="Clear">
+		</li>
+
+
+
+			</ul>
+		</div>							    
+							    
+							    
+
+
+			           - <input type="text" name="search-term" placeholder="Search images, vectors and more" class="main-search-form-width">
+			           <button type="submit" value="search" class="button-success pure-button">Search</button>
+			       </form>			                    
+	            </div><!-- End main search -->
+	        </div><!-- End pure-g -->
+        </header>
+
+
+   
+
+
+
+        <div class="content">
+
+
+            <div class="pure-g-r">
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2875/9069037713_1752f5daeb.jpg" alt="Peyto Lake">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="http://farm3.staticflickr.com/2813/9069585985_80da8db54f.jpg" alt="Train">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="http://farm6.staticflickr.com/5456/9121446012_c1640e42d0.jpg" alt="T-Shirt Store">
+                </div>
+                <div class="pure-u-1-4">
+                    <img class="pure-img-responsive" src="http://farm8.staticflickr.com/7357/9086701425_fda3024927.jpg" alt="Mountain">
+                </div>
+            </div>
+
+
+            <div class="pure-u-g-r intro">
+			    <div class="pure-u-1 ">
+			       <h2>100 % Free Downloads</h2>
+				           <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>            
+			      </div><!-- End pure-u-1 -->  
+		    </div>
+
+            
+            
+	         <div class="pure-g-r well">
+	           <div class="pure-u-2-5">
+			          <div class="login-form">
+			            <h3>Become a member and start downloading</h3>
+				            <form class="pure-form pure-form-aligned home-registration-form">
+							    <fieldset>
+							        <div class="pure-control-group">
+							            <label for="name">Username</label>
+							            <input id="name" type="text" name="username" placeholder="Username">
+							        </div>
+							
+							        <div class="pure-control-group">
+							            <label for="password">Password</label>
+							            <input id="password" type="password" placeholder="Password">
+							        </div>
+							
+							        <div class="pure-control-group">
+							            <label for="email">Email Address</label>
+							            <input id="email" type="email" placeholder="Email Address">
+							        </div>
+							
+							        <div class="pure-controls">
+							            <label for="cb" class="pure-checkbox">
+							                <input id="cb" type="checkbox"> I've read the terms and conditions
+							            </label>
+							
+							            <button type="submit" class="pure-button pure-button-primary submit-btn">Submit</button>
+							        </div>
+							    </fieldset>
+							</form>
+						</div><!-- End login-form -->  	
+		       </div><!-- End pure-1-2 --> 
+		       <div class="pure-u-3-5">
+		       <h3>100 % Free Downloads</h3>
+			            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			            
+		      </div><!-- End pure-u-1-2 -->                
+	       </div><!-- End pure-g-r -->        
+
+
+
+
+	       <div>
+            <h2 class="content-subhead">Categories</h2>
+            
+            <div class="categories-container pure-g-r">
+            
+            	<div class="pure-u-1-2">
+	            	<div class="pure-g">
+		            		<div class="pure-u-1-2">	
+				            	<ul>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>	            	
+				            	</ul>
+				            </div>
+			            
+		            		<div class="pure-u-1-2">
+				            	<ul>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>	            	
+				            	</ul>
+				            </div>
+			          </div><!-- End pure-g -->  
+			      </div><!-- End pure-u-1-2 -->  			            	
+
+            	
+            	<div class="pure-u-1-2">
+	            	<div class="pure-g">
+		            		<div class="pure-u-1-2">	
+				            	<ul>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>	            	
+				            	</ul>
+				            </div>
+			            
+		            		<div class="pure-u-1-2">
+				            	<ul>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>	            	
+				            	</ul>
+				            </div>
+			          </div><!-- End pure-g-r -->  
+			      </div><!-- End pure-u-1-2 -->  
+
+            </div><!-- End pure-g-r -->
+            </div>                   
+                  
+                      
+        </div><!-- End Content -->        
+
+<footer>
+            <h2 class="content-subhead">footer</h2>
+            
+            <div class="footer-container pure-g-r">
+            
+            	<div class="pure-u-1-2">
+	            	<div class="pure-g">
+		            		<div class="pure-u-1-2">	
+				            	<ul>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>	            	
+				            	</ul>
+				            </div>
+			            
+		            		<div class="pure-u-1-2">
+				            	<ul>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>	            	
+				            	</ul>
+				            </div>
+			          </div><!-- End pure-g -->  
+			      </div><!-- End pure-u-1-2 -->  			            	
+
+            	
+            	<div class="pure-u-1-2">
+	            	<div class="pure-g">
+		            		<div class="pure-u-1-2">	
+				            	<ul>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>	            	
+				            	</ul>
+				            </div>
+			            
+		            		<div class="pure-u-1-2">
+				            	<ul>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>
+					            	<li>Categories</li>	            	
+				            	</ul>
+				            </div>
+			          </div><!-- End pure-g-r -->  
+			      </div><!-- End pure-u-1-2 -->  
+
+            </div><!-- End pure-g-r -->
+</footer> 

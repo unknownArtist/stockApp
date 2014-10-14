@@ -1,0 +1,13 @@
+.smart_autocomplete_container {
+  list-style: none;
+  margin-top: 20px;
+  padding: 0;
+  border:1px solid gray;
+  border-radius: 4px;
+  width: 17.7% !important;
+  position: relative;
+}
+
+ul.smart_autocomplete_container li {list-style: none; cursor: pointer;padding: 5px;}
+li.smart_autocomplete_highlight {background-color: #C1CE84;}
+ul.smart_autocomplete_container { margin: 19px 0;  background-color: #E3EBBC; }
