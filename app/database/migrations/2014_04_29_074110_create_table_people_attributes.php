@@ -20,7 +20,7 @@ class CreateTablePeopleAttributes extends Migration {
 			$table->mediumInteger('number_of_people');
 			$table->string('gender',100);
 			$table->string('age',100);
-			$table->text('people_attribute');
+			//$table->text('people_attribute');
 
 			$table->index('image_id');
 		});

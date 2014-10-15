@@ -66,9 +66,11 @@ class ImageModel extends Eloquent {
         $exclude_keywords   = Input::get('exclude_keywords');
         $people_number      = Input::get('people_number');
         $people             = Input::get('people');
+        $people_age         = Input::get('people_age');
         $gender             = Input::get('people_gender');
         $ethnicity          = Input::get('people_ethnicity');
         $image_tag          = Input::get('image_tag');
+
 
         $query = NULL;
         $query = new ImageModel();
@@ -126,7 +128,7 @@ class ImageModel extends Eloquent {
             if($people_number == 4)
             {
                 $query = $query->leftJoin('people_attributes','people_attributes.image_id','=','images.id')
-                    ->where('people_attributes.number_of_people','>',4);
+                    ->where('people_attributes.number_of_people','=',4);
             }else
             {
                 $query = $query->leftJoin('people_attributes','people_attributes.image_id','=','images.id')
@@ -137,23 +139,29 @@ class ImageModel extends Eloquent {
         {
             if($people == 2)
             {
-                $query = $query->leftJoin('people_attributes','people_attributes.image_id','=','images.id')
-                               ->where('people_attributes.number_of_people','>',0);
+                $query = $query->leftJoin('people_attributes as p2','p2.image_id','=','images.id')
+                               ->where('p2.number_of_people','>',0);
             }else
             {
-                $query = $query->leftJoin('people_attributes','people_attributes.image_id','=','images.id')
-                               ->where('people_attributes.number_of_people','=',0);
+                $query = $query->leftJoin('people_attributes as p1','p1.image_id','=','images.id')
+                               ->where('p1.number_of_people','=',null);
             }
         }
         if($gender)
         {
-            $query = $query->leftJoin('people_attributes','people_attributes.image_id','=','images.id')
-                           ->where('people_attributes.gender','=',$gender);
+            $query = $query->leftJoin('people_attributes as pg','pg.image_id','=','images.id')
+                           ->where('pg.gender','=',$gender);
+        }
+        if($people_age)
+        {
+
+            $query = $query->leftJoin('people_attributes as pa','pa.image_id','=','images.id')
+                           ->where('pa.age','=',$people_age);
         }
         if($ethnicity)
         {
-            $query = $query->leftJoin('people_attributes','people_attributes.image_id','=','images.id')
-                           ->where('people_attributes.ethnicity','=',$ethnicity);
+            $query = $query->leftJoin('people_attributes as pe','pe.image_id','=','images.id')
+                           ->where('pe.ethnicity','=',$ethnicity);
         }
         if($image_tag)
         {  
