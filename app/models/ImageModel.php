@@ -235,7 +235,7 @@ class ImageModel extends Eloquent {
     }
     public static function getImage($id)
     {
-        return ImageModel::where('id',$id)
+        return ImageModel::where('images.id',$id)
                             ->where('images.id',$id)
                             ->leftJoin('categories','images.id','=','categories.image_id')
                             ->distinct()
