@@ -18,7 +18,7 @@ class ImageController extends \BaseController {
         return Response::download($file,$image_name,$headers);
     }
     public function getViewImage()
-    {
+    { 
         // Request segement function will fetch the 2nd argument of URL
         $id         =  Request::segment(2);
         $user_id    =  Sentry::getUser()->id;
