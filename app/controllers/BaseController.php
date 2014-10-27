@@ -49,21 +49,27 @@ class BaseController extends Controller {
                     $success = Image::make($img)
                         ->resize($width, $height,function ($constraint) {
                             $constraint->aspectRatio();
-                        })
-                        // ->insert($_SERVER['DOCUMENT_ROOT'].'/images/bar.png','center')
-                        ->save($upload_path."/".$imageName);
+                        });
+                    if($path === 'thumbnail'){
+                        $success->save($upload_path."/".$imageName);
+                    }
+                    else {
+                        $success
+                            ->insert($_SERVER['DOCUMENT_ROOT'] . '/images/watermark.png', 'center')
+                            ->save($upload_path."/".$imageName);
+                    }
 
                 }else
                 {
                        $success = Image::make($img)
-                                                  ->insert($_SERVER['DOCUMENT_ROOT'].'/images/bar.png','center')
+                                                  ->insert($_SERVER['DOCUMENT_ROOT'].'/images/watermark.png','center')
                                                   ->save($upload_path."/". $imageName);
                 }
                 if ($success) {
                     try {
                         
                         return $imageName;
-                    } catch (Sentry\SentryException $e) {
+                    } catch (\Sentry\SentryException $e) {
                         
                         return false;
                     }
