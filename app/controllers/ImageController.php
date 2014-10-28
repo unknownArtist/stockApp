@@ -17,20 +17,22 @@ class ImageController extends \BaseController {
             );
         return Response::download($file,$image_name,$headers);
     }
-    public function getViewImage()
-    { 
+    public function getImageView()
+    {
+
         // Request segement function will fetch the 2nd argument of URL
         $id         =  Request::segment(2);
         $user_id    =  Sentry::getUser()->id;
         $downloaded =  Download::where('image_id',$id)->count();
         $views      =  Views::where('image_id',$id)->count();
         ImageModel::incrementView($id); // Just icremenent view which is saving user_id in views table..
-        $image = ImageModel::getImage($id); 
-        
+        $image = ImageModel::getImage($id);
+
         return View::make('pages.images-display')
                    ->with('downloaded',$downloaded)
                    ->with('views',$views)
                    ->with('images',$image);
+
     }
 	public function getImageUpload()
 	{

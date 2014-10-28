@@ -58,9 +58,14 @@
 <div class="related-searches">
 	<b>Suggested Tags: </b>
 	@if(!empty($results))
-    @foreach($results as $result)
-		{{ $result->getTagsSuggestion($result->id) }}
-	@endforeach
+	 {{ $i=0 }}
+
+	 @foreach ($results->slice(0, 14) as $result)
+
+       {{ $result->getTagsSuggestion($result['id']) }}
+
+     @endforeach
+
 	@else
          {{ "No match found" }}
     

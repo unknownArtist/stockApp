@@ -7,12 +7,12 @@ class Download extends \Eloquent {
 
     public static function getRecentDownloadedImages($user_id)
     {
-    	return Download::where('downloads.user_id',$user_id)
-                                    ->orderBy('downloads.id','DESC')
-                                    ->limit(3)
-                                    ->join('images','images.id','=','downloads.image_id')
-                                    ->distinct()
-                                    ->select('images.image_name','slug')
-                                    ->get();
+        return Download::where('downloads.user_id',$user_id)
+            ->join('images','images.id','=','downloads.image_id')
+            ->select(DB::raw("MAX(downloads.id) as downloadID"),'images.image_name','slug')
+            ->groupBy('downloads.image_id')
+            ->orderBy('downloadID','DESC')
+            ->get();
+
     }
 }

@@ -19,7 +19,7 @@
 /*-------------------------Contributor Account Routes-------------------------*/
 Route::group(array('before' => 'auth'), function() {
     Route::get('image/{id}/download/{image_name}',array('uses'=>'ImageController@downloadImage'));
-    Route::get('image/{id}/{slug}',array('uses'=>'ImageController@getViewImage'));
+    Route::get('image/{id}/{slug}',array('uses'=>'ImageController@getImageView'));
     Route::get('contributor/registration', array('as'=>'contributor-registration','uses'=>'ContributorController@getContributorRegistration'));
     Route::post('contributor/registration', array('uses'=>'ContributorController@postContributorRegistration'));
 
